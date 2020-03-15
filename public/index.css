@@ -1,0 +1,65 @@
+html{
+  font-size: 70%;
+}
+
+body{
+  margin: 10px;
+}
+
+#ticketForm{
+  text-align: center;
+}
+
+.ticket{
+  border:1px solid gray;
+  border-radius: 8px;
+  float: left;
+  box-shadow: -1px 0px 8px 0.1px #000;
+  margin-left: 50px;
+}
+.ticket h1{
+  margin: 0px;
+}
+
+.header{
+  background-color: #c4cbcf;
+  font-weight: bold;
+  border-radius: 8px 8px 0px 0px;
+}
+.header h1{
+  font-size: 1.4rem;
+  text-align: center;
+}
+.title{
+  margin-left: 10px;
+}
+.header label{
+  margin-left: 10px;
+  border-radius: 8px;
+}
+.header label:hover{
+  text-decoration: underline;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0px;
+}
+
+table{
+  text-align: center;
+  font-size: 1.2rem;
+}
+.direction-b, .direction-s{
+  font-size: 1.4rem;
+}
+.caption{
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+td{
+  padding: 5px 30px;
+}
+.d-border{
+  background-color: #f3ecb8;
+}
