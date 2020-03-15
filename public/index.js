@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import ReactDOM from 'react-dom';
 import Ticket from './Ticket';
-import Curves from './Curves';
+
 class App extends PureComponent{
   constructor(){
     super();
