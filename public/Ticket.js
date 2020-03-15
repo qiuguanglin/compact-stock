@@ -39,8 +39,7 @@ class Ticket extends PureComponent{
       sellFiveQuan: 0,
       sellFive: 0,
       tradeDate: null,
-      tradeTime: null,
-      tradeMilSec: null
+      tradeTime: null
     }
   }
 
@@ -57,6 +56,7 @@ class Ticket extends PureComponent{
     for(let i=0; i<stats.length; i++){
       const stat = stats[i];
       const key = keys[i];
+      if(!key)continue;
       stat = (key == 'title' || key.includes('Quan')) ? stat : (+stat).toFixed(2);
       obj[key] = stat;
     }
