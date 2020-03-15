@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import ReactDOM from 'react-dom';
 import Ticket from './Ticket';
-
+import Curves from './Curves';
 class App extends PureComponent{
   constructor(){
     super();
@@ -30,6 +30,21 @@ class App extends PureComponent{
     const {tickets} = this.state;
     tickets.splice(tickets.indexOf(code), 1);
     this.setState({tickets: [...tickets]});
+  }
+
+  componentDidMount(){
+    window.addEventListener('beforeunload', e=>localStorage.setItem('portfolios', this.state.tickets.join(',')));
+    if(Storage){
+      const portfolios = localStorage.getItem('portfolios');
+      if(portfolios){
+        portfolios.split(',');
+        this.setState({tickets: portfolios.split(',')});
+      }
+    }
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('beforeunload');
   }
 
   render(){
