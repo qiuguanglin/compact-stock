@@ -96,13 +96,15 @@ class Ticket extends PureComponent{
 
     const percentage = Math.round(((price-closedPrice)/closedPrice) * 10000)/100 + '%';
     const priceStyle = {color: parseInt(price) > parseInt(closedPrice) ? 'red' : price == closedPrice ? 'gray' : 'green'};
+    const stockLink = Config.financeLink(code);
+
     return(
       <div className="ticket">
         <div className="header">
           <label onClick={this.close.bind(this, code)}>X</label>
           <h1>
             <span className="code">{code}</span>
-            <span className="title">{title}</span>
+            <span className="title"><a href={stockLink}>{title}</a></span>
           </h1>
         </div>
         <div>

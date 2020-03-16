@@ -16,6 +16,7 @@ const Config = {
     const env = REST[process.env.NODE_ENV];
     return `${env.url}:${env.port}/data`
   },
-  retrieveInterval: function(){return 3000;}
+  retrieveInterval: function(){return 3000;},
+  financeLink: function(code){return `http://finance.sina.com.cn/realstock/company/${code}/nc.shtml`}
 }
 export default Config;
