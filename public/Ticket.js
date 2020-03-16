@@ -95,7 +95,8 @@ class Ticket extends PureComponent{
        tradeDate} = this.state;
 
     const percentage = Math.round(((price-closedPrice)/closedPrice) * 10000)/100 + '%';
-    const priceStyle = {color: parseInt(price) > parseInt(closedPrice) ? 'red' : price == closedPrice ? 'gray' : 'green'};
+    const gap = price-closedPrice;
+    const priceStyle = {color: gap > 0 ? 'red' : gap == 0 ? 'gray' : 'green'};
     const stockLink = Config.financeLink(code);
 
     return(
