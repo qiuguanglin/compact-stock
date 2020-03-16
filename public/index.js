@@ -6,7 +6,7 @@ class App extends PureComponent{
   constructor(){
     super();
     this.state = {
-      // tickets: ['sz002030','sz002024'],
+      // tickets: ['sz002030','sz002024','sz002030','sz002024','sz002030','sz002024','sz002030','sz002024'],
       tickets: [],
       code: ''
     }
@@ -49,17 +49,16 @@ class App extends PureComponent{
 
   render(){
     const {code, tickets} = this.state;
-    const ticketPanels = tickets.map(stockCode=><li key={stockCode}><Ticket code={stockCode} close={this.close}/></li>);
+    const ticketPanels = tickets.map(stockCode=><Ticket key={stockCode} code={stockCode} close={this.close}/>);
     return(
       <div>
         <form onSubmit={this.addTicket.bind(this)} id="ticketForm">
           <input type="text" onChange={this.stockChanged.bind(this)} value={code} placeholder="sz/sh000000"/>
-          <input type="submit" value="新看板"/>
         </form>
 
-        <ul>
+        <div id="ticketList" style={{width: tickets.length * 240}}>
           {ticketPanels}
-        </ul>
+        </div>
       </div>);
   }
 }

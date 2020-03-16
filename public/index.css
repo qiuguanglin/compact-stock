@@ -3,11 +3,19 @@ html{
 }
 
 body{
-  margin: 10px;
+  margin: 0px;
 }
 
 #ticketForm{
   text-align: center;
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+}
+
+#ticketForm input{
+  line-height: 20px;
+  border: 1px solid gray;
 }
 
 .ticket{
@@ -15,7 +23,7 @@ body{
   border-radius: 8px;
   float: left;
   box-shadow: -1px 0px 8px 0.1px #000;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 .ticket h1{
   margin: 0px;
@@ -39,11 +47,6 @@ body{
 }
 .header label:hover{
   text-decoration: underline;
-}
-
-ul{
-  list-style-type: none;
-  padding: 0px;
 }
 
 table{
