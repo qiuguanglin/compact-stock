@@ -6,6 +6,8 @@ body{
   margin: 0px;
 }
 
+/* #ticketList{border:1px solid black} */
+
 #ticketForm{
   text-align: center;
   position: fixed;

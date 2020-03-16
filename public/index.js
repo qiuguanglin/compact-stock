@@ -56,7 +56,7 @@ class App extends PureComponent{
           <input type="text" onChange={this.stockChanged.bind(this)} value={code} placeholder="sz/sh000000"/>
         </form>
 
-        <div id="ticketList" style={{width: tickets.length * 240}}>
+        <div id="ticketList" style={{width: tickets.length * 260}}>
           {ticketPanels}
         </div>
       </div>);
