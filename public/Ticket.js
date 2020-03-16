@@ -95,6 +95,7 @@ class Ticket extends PureComponent{
        tradeDate} = this.state;
 
     const percentage = Math.round(((price-closedPrice)/closedPrice) * 10000)/100 + '%';
+    const priceStyle = {color: parseInt(price) > parseInt(closedPrice) ? 'red' : price == closedPrice ? 'gray' : 'green'};
     return(
       <div className="ticket">
         <div className="header">
@@ -110,7 +111,7 @@ class Ticket extends PureComponent{
               <tr className="caption">
                 <td colSpan="2">
                   当前价
-                  <span style={{color: price > closedPrice ? 'red' : price == closedPrice ? 'gray' : 'green'}}>
+                  <span style={priceStyle}>
                     {price}, {percentage}
                   </span>
                 </td>
