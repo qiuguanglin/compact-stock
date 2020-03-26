@@ -47,6 +47,10 @@ class Ticket extends PureComponent{
     this.props.close(code);
   }
 
+  top(code){
+    this.props.top(code);
+  }
+
   extract(bundle){
     const {code} = this.props;
     const stats = (new Function(`${bundle}  return hq_str_${code}`))().split(/,/);
@@ -103,6 +107,7 @@ class Ticket extends PureComponent{
       <div className="ticket">
         <div className="header">
           <label onClick={this.close.bind(this, code)}>X</label>
+          <label className="topBtn" onClick={this.top.bind(this, code)}>TOP</label>
           <h1>
             <span className="code">{code}</span>
             <span className="title"><a href={stockLink}>{title}</a></span>

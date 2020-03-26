@@ -11,6 +11,7 @@ class App extends PureComponent{
       code: ''
     }
     this.close = this.close.bind(this);
+    this.top = this.top.bind(this);
   }
 
   addTicket(e){
@@ -47,9 +48,18 @@ class App extends PureComponent{
     window.removeEventListener('beforeunload');
   }
 
+  top(code){
+    const {tickets} = this.state;
+    const index = tickets.indexOf(code);
+    if(index == 0)return ;
+    tickets.splice(index, 1);
+    tickets.unshift(code);
+    this.setState({tickets: [...tickets]});
+  }
+
   render(){
     const {code, tickets} = this.state;
-    const ticketPanels = tickets.map(stockCode=><Ticket key={stockCode} code={stockCode} close={this.close}/>);
+    const ticketPanels = tickets.map(stockCode=><Ticket key={stockCode} code={stockCode} close={this.close} top={this.top}/>);
     return(
       <div>
         <form onSubmit={this.addTicket.bind(this)} id="ticketForm">

@@ -50,6 +50,13 @@ body{
 .header label:hover{
   text-decoration: underline;
 }
+.topBtn{
+  font-family: impact;
+  cursor: pointer;
+}
+.topBtn:hover{
+  color: RED;
+}
 
 table{
   text-align: center;
