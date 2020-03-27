@@ -57,6 +57,18 @@ class App extends PureComponent{
     this.setState({tickets: [...tickets]});
   }
 
+  showMyPorfolios(){
+    if(Storage){
+      const portfolios = localStorage.getItem('portfolios');
+      if(navigator && navigator.clipboard){
+        navigator.clipboard.writeText(portfolios).then(()=>{
+          window.alert('portfolios copied');
+        });
+      }
+
+    }
+  }
+
   render(){
     const {code, tickets} = this.state;
     const ticketPanels = tickets.map(stockCode=><Ticket key={stockCode} code={stockCode} close={this.close} top={this.top}/>);
@@ -65,10 +77,12 @@ class App extends PureComponent{
         <form onSubmit={this.addTicket.bind(this)} id="ticketForm">
           <input type="text" onChange={this.stockChanged.bind(this)} value={code} placeholder="sz/sh000000"/>
         </form>
+        <button onClick={this.showMyPorfolios.bind(this)} id="export">Export Portfolios</button>
 
         <div id="ticketList" style={{width: tickets.length * 260}}>
           {ticketPanels}
         </div>
+
       </div>);
   }
 }
