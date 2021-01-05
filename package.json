@@ -33,7 +33,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "gbk": "^0.1.0",
     "iconv-lite": "^0.5.1",
